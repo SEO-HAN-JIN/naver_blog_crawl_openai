@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:10.7
+    container_name: naver_blog_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    paort:
+      - "3306:3306"
+    volumnes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - my-network
+  
+  springboot:
+    build: .
+    container_name: naver_blog_web
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mariadb
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    networks:
+      - my-network
+  
+volumes:
+  mariadb_data:
+
+networks:
+  my-network:
