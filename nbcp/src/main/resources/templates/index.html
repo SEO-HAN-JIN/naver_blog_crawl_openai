@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button id="startBtn">작업시작!</button>
+
+<script>
+  document.getElementById('startBtn').addEventListener('click', function () {
+    fetch('/api/job/start', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        userId: 'seo970713'
+      })
+    })
+            .then(response => response.json())
+            .then(data => {
+              alert("서버 응답: " + data.message);
+            })
+            .catch(error => {
+              console.log('오류 발생: ', error)
+            })
+
+  });
+</script>
+</body>
+</html>
