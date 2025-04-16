@@ -1,0 +1,14 @@
+# docker-compose up --build -d
+version: '3.8'
+
+services:
+  springboot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=prod
+    restart: always
+

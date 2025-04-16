@@ -3,14 +3,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mariadb://my-mariadb:3306/mydb
+    url: jdbc:mariadb://localhost:3306/mydb
     username: biz
     password: 162458
     driver-class-name: org.mariadb.jdbc.Driver
-  devtools:
-    restart:
-      enabled: true
-      poll-interval: 1000ms
 
   jpa:
     hibernate:
