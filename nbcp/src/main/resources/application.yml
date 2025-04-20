@@ -3,7 +3,8 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mariadb://my-mariadb:3306/mydb
+#    url: jdbc:mariadb://my-mariadb:3306/mydb
+    url: jdbc:mariadb://localhost:3306/mydb
     username: biz
     password: 162458
     driver-class-name: org.mariadb.jdbc.Driver
@@ -19,4 +20,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+docker:
+  image-name: "comment-job-runner-image"
 
