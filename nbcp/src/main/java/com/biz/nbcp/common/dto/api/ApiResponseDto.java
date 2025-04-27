@@ -1,4 +1,4 @@
-package com.biz.nbcp.common.dto.response;
+package com.biz.nbcp.common.dto.api;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

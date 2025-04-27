@@ -1,6 +1,6 @@
 package com.biz.nbcp.job;
 
-import com.biz.nbcp.common.dto.response.ApiResponseDto;
+import com.biz.nbcp.common.dto.api.ApiResponseDto;
 import com.biz.nbcp.job.dto.JobRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

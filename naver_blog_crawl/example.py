@@ -1,20 +1,14 @@
-import requests
-import time
+price = 3
+money = 20
+count = 4
 
-
-def send_post(index):
-    url = "http://localhost:8080/api/comment-logs"
-    data = {
-        "userId" : f"auto_bot_{index}",
-        "blogUrl" : f"http://myblog.com/post/{index}",
-        "comment" : f"[{index}] 자동 주고 전송 테스트입니다."
-    }
-
-    requests.post(url, json=data)
+totalAmt = 0
+for i in range(1, count + 1):
+    totalAmt += (price * i)
     
-for i in range(10):
-    print(f"{i+1}번째 요청 중...")
-    send_post()
-    if i < 9:
-        time.sleep(20)
-    
+if (totalAmt > money):
+    answer = totalAmt - money
+else:
+    answer = 0
+
+print(answer) 

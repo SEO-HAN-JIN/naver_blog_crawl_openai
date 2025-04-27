@@ -24,3 +24,6 @@ spring:
 docker:
   image-name: "comment-job-runner-image"
 
+jwt:
+  secret_key: "nbcp-secret-key"
+
